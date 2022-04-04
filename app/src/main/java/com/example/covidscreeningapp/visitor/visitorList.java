@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class visitorList extends AppCompatActivity {
 
     private RecyclerView rv1;
-    private VisitorDBHelper myDB;
+    //private VisitorDBHelper myDB;
     private ArrayList<String> id, firstname, lastname, mobile, destination;
     private CustomAdapter adapter;
 
@@ -25,20 +25,20 @@ public class visitorList extends AppCompatActivity {
         setContentView(R.layout.activity_employee_list_main);
 
         rv1 = (RecyclerView) findViewById(R.id.recyclerView);
-        myDB = new VisitorDBHelper(visitorList.this);
+        //myDB = new VisitorDBHelper(visitorList.this);
         id= new ArrayList<>();
         firstname = new ArrayList<>();
         lastname = new ArrayList<>();
         mobile  = new ArrayList<>();
         destination = new ArrayList<>();
 
-        storeDatainArraylist();
+        //storeDatainArraylist();
         adapter = new CustomAdapter(visitorList.this,id,firstname,lastname,mobile,destination);
         rv1.setLayoutManager(new LinearLayoutManager(visitorList.this));
         rv1.setAdapter(adapter);
 
     }
-    public void storeDatainArraylist(){
+    /*public void storeDatainArraylist(){
         Cursor cursor = myDB.readData();
         if(cursor.getCount() == 0){
             Toast.makeText(this,"Database is empty", Toast.LENGTH_SHORT).show();
@@ -51,5 +51,5 @@ public class visitorList extends AppCompatActivity {
                 destination.add(cursor.getString(4));
             }
         }
-    }
+    }*/
 }

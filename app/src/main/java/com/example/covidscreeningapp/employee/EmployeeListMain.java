@@ -22,13 +22,5 @@ public class EmployeeListMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visitor_list_main);
 
-        addbutton = findViewById(R.id.add_visitor);
-        addbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                }
-
-        });
     }
 }

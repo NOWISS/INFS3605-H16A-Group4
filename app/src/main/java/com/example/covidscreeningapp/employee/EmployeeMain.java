@@ -10,13 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.covidscreeningapp.R;
-import com.example.covidscreeningapp.visitor.VisitorDBHelper;
 
 public class EmployeeMain extends AppCompatActivity {
 
     private EditText firstname, lastname,mobile,destination;
     private Button btn;
-    private VisitorDBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -32,6 +32,7 @@ public class VisitorCont extends AppCompatActivity {
         btn = findViewById(R.id.button);
 
     }
+    // To-do
     public void radioButtonhandler(View view) {
 
         // Decide what happens when a user clicks on a button

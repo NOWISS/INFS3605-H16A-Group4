@@ -36,10 +36,11 @@ public class DetailActivity extends AppCompatActivity {
         if (ab != null) {
             ab.setTitle("Detail");
         }
+        // To-do
         delete_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                confirmDialog();
+
             }
         });
     }
@@ -62,25 +63,5 @@ public class DetailActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
         }
-    }
-    void confirmDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete " + fnamee + " " + lnamee + " ?");
-        builder.setMessage("Are you sure you want to delete " + fnamee +" "+ lnamee + " ?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                VisitorDBHelper myDB = new VisitorDBHelper(DetailActivity.this);
-                myDB.deleteOneRow(id);
-                finish();
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        builder.create().show();
     }
 }

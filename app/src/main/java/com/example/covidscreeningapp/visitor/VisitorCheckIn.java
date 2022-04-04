@@ -21,13 +21,14 @@ public class VisitorCheckIn extends AppCompatActivity {
     private String FirstName, LastName,MobileNumber,Destination;
     private Spinner sp;
     private Button btn;
+    // To-do
     private RadioButton m,f,o;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visitor_check_in);
-        btn = findViewById(R.id.button);
+        btn = findViewById(R.id.visitor_next);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,16 +37,16 @@ public class VisitorCheckIn extends AppCompatActivity {
             }
         });
 
-        firstname = findViewById(R.id.fnames);
+        firstname = findViewById(R.id.fnames_visitor);
         FirstName = firstname.getText().toString();
 
-        lastname = findViewById(R.id.lnames);
+        lastname = findViewById(R.id.lnames_visitor);
         LastName = lastname.getText().toString();
 
-        mobile = findViewById(R.id.mobile);
+        mobile = findViewById(R.id.mobile_visitor);
         MobileNumber = mobile.getText().toString();
 
-        destination = findViewById(R.id.destination);
+        destination = findViewById(R.id.destination_visitor);
         Destination = destination.getText().toString();
 
         sp = findViewById(R.id.spinner_visitor);
