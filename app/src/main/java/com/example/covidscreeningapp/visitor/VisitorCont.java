@@ -1,22 +1,23 @@
-package com.example.covidscreeningapp;
+package com.example.covidscreeningapp.visitor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 
-public class EmployeeCont extends AppCompatActivity {
+import com.example.covidscreeningapp.R;
 
- private Button btn;
- private RadioButton y1,y2,y3,y4,n1,n2,n3,n4,y5,n5;
+public class VisitorCont extends AppCompatActivity {
+
+    private Button btn;
+    private RadioButton y1,y2,y3,y4,n1,n2,n3,n4,y5,n5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employee_cont);
+        setContentView(R.layout.activity_visitor_cont);
 
         y1 = findViewById(R.id.y1);
         y2 = findViewById(R.id.y2);
@@ -31,6 +32,7 @@ public class EmployeeCont extends AppCompatActivity {
         btn = findViewById(R.id.button);
 
     }
+    // To-do
     public void radioButtonhandler(View view) {
 
         // Decide what happens when a user clicks on a button

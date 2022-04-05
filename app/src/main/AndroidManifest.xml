@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.covidscreeningapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,22 +13,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidScreeningApp">
         <activity
-            android:name=".EmployeeCont"
+            android:name=".employee.UploadCertificate"
             android:exported="true" />
         <activity
-            android:name=".EmployeeMain"
+            android:name=".visitor.DetailActivity"
             android:exported="true" />
         <activity
-            android:name=".OrganizationMain"
+            android:name=".visitor.VisitorCont"
             android:exported="true" />
         <activity
-            android:name=".VisitorCheckIn"
+            android:name=".employee.EmployeeCont"
+            android:exported="true" />
+        <activity
+            android:name=".employee.EmployeeMain"
+            android:exported="true" />
+        <activity
+            android:name=".visitor.visitorList"
+            android:exported="true" />
+        <activity
+            android:name=".visitor.VisitorCheckIn"
             android:exported="true" />
         <activity
             android:name=".OrganizationLogin"
-            android:exported="true" />
-        <activity
-            android:name=".EmployeeLogin"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
