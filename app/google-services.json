@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "4087728738",
+    "firebase_url": "https://infs3605-covid-screening-default-rtdb.firebaseio.com",
+    "project_id": "infs3605-covid-screening",
+    "storage_bucket": "infs3605-covid-screening.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4087728738:android:bcf3197e879701a8dd9f3b",
+        "android_client_info": {
+          "package_name": "com.example.covidscreeningapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4087728738-5qr99unm065l6tsp3a10r7aghq9pqvct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmHPDsowqBOHANpWLPIPWFr4bwYjAU3TM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4087728738-5qr99unm065l6tsp3a10r7aghq9pqvct.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

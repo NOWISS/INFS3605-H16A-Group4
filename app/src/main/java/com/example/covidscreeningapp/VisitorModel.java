@@ -1,4 +1,4 @@
-package com.example.covidscreeningapp.visitor;
+package com.example.covidscreeningapp;
 
 public class VisitorModel {
 

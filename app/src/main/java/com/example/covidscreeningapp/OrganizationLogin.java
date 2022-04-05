@@ -11,8 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.covidscreeningapp.visitor.visitorList;
-
 public class OrganizationLogin extends AppCompatActivity {
 
     private EditText etUsername, etPassword;
@@ -53,7 +51,7 @@ public class OrganizationLogin extends AppCompatActivity {
                 if(!isValid){
                     tvLoginError.setText("Username or password is incorrect, please try again");
                 }else{
-                    Intent intent = new Intent(OrganizationLogin.this, visitorList.class);
+                    Intent intent = new Intent(OrganizationLogin.this, EmployeeListMain.class);
                     intent.putExtra("OrgUserName",username);
                     intent.putExtra("OrgPassword",password);
                     startActivity(intent);

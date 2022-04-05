@@ -1,8 +1,26 @@
-package com.example.covidscreeningapp.employee;
+package com.example.covidscreeningapp;
 
 public class Employee {
 
     String Firstname, Lastname, mobile, destination, vax, result;
+    String checkin,checkout;
+
+    public String getCheckin() {
+        return checkin;
+    }
+
+    public void setCheckin(String checkin) {
+        this.checkin = checkin;
+    }
+
+    public String getCheckout() {
+        return checkout;
+    }
+
+    public void setCheckout(String checkout) {
+        this.checkout = checkout;
+    }
+
 
     public String getFirstname() {
         return Firstname;
@@ -52,13 +70,15 @@ public class Employee {
         this.result = result;
     }
 
-    public Employee(String firstname, String lastname, String mobile, String destination, String vax, String result) {
+    public Employee(String firstname, String lastname, String mobile, String destination, String vax, String result, String checkin, String checkout) {
         Firstname = firstname;
         Lastname = lastname;
         this.mobile = mobile;
         this.destination = destination;
         this.vax = vax;
         this.result = result;
+        this.checkin = checkin;
+        this.checkout = checkout;
     }
 
     public Employee() {

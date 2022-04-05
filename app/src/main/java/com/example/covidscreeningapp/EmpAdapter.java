@@ -1,4 +1,4 @@
-package com.example.covidscreeningapp.visitor;
+package com.example.covidscreeningapp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,29 +13,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covidscreeningapp.R;
-
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
+public class EmpAdapter extends RecyclerView.Adapter<EmpAdapter.MyViewHolder> {
 
     private Context context;
-    private ArrayList id, firstname, lastname, mobile, destination;
-    private ArrayList idFiltered, firstnameFiltered, lastnameFilterd, mobileFiltered, destinationFiltered;
+    private ArrayList<Employee> list;
 
 
-    CustomAdapter(Context context,ArrayList id, ArrayList firstname, ArrayList lastname, ArrayList mobile, ArrayList destination){
+   public EmpAdapter(Context context, ArrayList<Employee> list){
         this.context = context;
-        this.id = id;
-        this.idFiltered = id;
-        this.firstname = firstname;
-        this.firstnameFiltered = firstname;
-        this.lastname = lastname;
-        this.lastnameFilterd = lastname;
-        this.mobile = mobile;
-        this.mobileFiltered = mobile;
-        this.destination = destination;
-        this.destinationFiltered = destination;
+        this.list = list;
     }
     @NonNull
     @Override
@@ -47,20 +35,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        holder.id_txt.setText(String.valueOf(id.get(position)));
-        holder.firstname_txt.setText(String.valueOf(firstname.get(position)));
-        holder.lastname_txt.setText(String.valueOf(lastname.get(position)));
-        holder.mobile_txt.setText(String.valueOf(mobile.get(position)));
-        holder.destination_txt.setText(String.valueOf(destination.get(position)));
+
+        Employee emp = list.get(position);
+        holder.firstname_txt.setText(emp.getFirstname());
+        holder.lastname_txt.setText(emp.getLastname());
+        holder.mobile_txt.setText(emp.getMobile());
+        holder.destination_txt.setText(emp.getDestination());
         holder.mainlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra("id", String.valueOf(id.get(position)));
-                intent.putExtra("firstname", String.valueOf(firstname.get(position)));
-                intent.putExtra("lastname", String.valueOf(lastname.get(position)));
-                intent.putExtra("mobile", String.valueOf(mobile.get(position)));
-                intent.putExtra("destination", String.valueOf(destination.get(position)));
+                intent.putExtra("firstname", emp.getFirstname());
+                intent.putExtra("lastname", emp.getLastname());
+                intent.putExtra("mobile", emp.getMobile());
+                intent.putExtra("destination", emp.getDestination());
                 context.startActivity(intent);
             }
         });
@@ -68,7 +56,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return id.size();
+        return list.size();
     }
 
 

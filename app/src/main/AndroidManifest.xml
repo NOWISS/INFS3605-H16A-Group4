@@ -13,25 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidScreeningApp">
         <activity
-            android:name=".employee.UploadCertificate"
+            android:name=".Pass"
             android:exported="true" />
         <activity
-            android:name=".visitor.DetailActivity"
+            android:name=".UploadCertificate"
             android:exported="true" />
         <activity
-            android:name=".visitor.VisitorCont"
+            android:name=".DetailActivity"
             android:exported="true" />
         <activity
-            android:name=".employee.EmployeeCont"
+            android:name=".EmployeeListMain"
             android:exported="true" />
         <activity
-            android:name=".employee.EmployeeMain"
+            android:name=".VisitorCont"
             android:exported="true" />
         <activity
-            android:name=".visitor.visitorList"
+            android:name=".EmployeeCont"
             android:exported="true" />
         <activity
-            android:name=".visitor.VisitorCheckIn"
+            android:name=".EmployeeMain"
+            android:exported="true" />
+        <activity
+            android:name=".visitorList"
+            android:exported="true" />
+        <activity
+            android:name=".VisitorCheckIn"
             android:exported="true" />
         <activity
             android:name=".OrganizationLogin"

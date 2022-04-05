@@ -10,9 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.covidscreeningapp.employee.EmployeeMain;
-import com.example.covidscreeningapp.visitor.VisitorCheckIn;
-
 public class MainActivity extends AppCompatActivity {
     private Button emp, org, visitor,Okay;
     private Dialog dialog;
