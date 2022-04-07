@@ -5,24 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EmployeeMain">
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="116dp"
         android:text="Check-in Form"
-        android:textColor="#DFC39D"
+        android:textColor="#000000"
         android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="138dp"
+        android:layout_height="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025"
+        app:srcCompat="@drawable/greenlight_logo" />
 
     <EditText
         android:id="@+id/fnames"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="184dp"
         android:ems="10"
         android:hint="First Name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +47,7 @@
         android:id="@+id/lnames"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="240dp"
         android:ems="10"
         android:hint="Last Name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +59,7 @@
         android:id="@+id/mobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="300dp"
         android:ems="10"
         android:hint="Mobile Number"
         android:inputType="number"
@@ -59,7 +72,7 @@
         android:id="@+id/destination"
         android:layout_width="354dp"
         android:layout_height="71dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="364dp"
         android:ems="10"
         android:hint="NAME OF PERSON VISITING / ACCOMPANYING"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +92,7 @@
         app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintVertical_bias="0.882" />
 
     <Button
         android:id="@+id/button"
@@ -97,7 +110,7 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="432dp"
+        android:layout_marginTop="464dp"
         android:text="Check-in Time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.114"
@@ -108,10 +121,10 @@
         android:id="@+id/checkin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="472dp"
+        android:layout_marginTop="532dp"
         android:hint="DATE/TIME"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -119,10 +132,10 @@
         android:id="@+id/Checkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="472dp"
+        android:layout_marginTop="532dp"
         android:hint="Date/time"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.816"
+        app:layout_constraintHorizontal_bias="0.808"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -130,7 +143,7 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="432dp"
+        android:layout_marginTop="464dp"
         android:text="Checkout Time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.829"
