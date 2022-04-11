@@ -30,7 +30,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.row, parent,false);
+        View view = inflater.inflate(R.layout.row1, parent,false);
         return new MyViewHolder(view);
     }
 
@@ -44,8 +44,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.mainlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, DetailActivity.class);
-
+                Intent intent = new Intent(context, DetailActivity_visitor.class);
                 intent.putExtra("firstname", vs.getFirstname());
                 intent.putExtra("lastname", vs.getLastname());
                 intent.putExtra("mobile", vs.getMobile());

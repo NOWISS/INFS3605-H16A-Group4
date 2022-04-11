@@ -1,10 +1,8 @@
 package com.example.covidscreeningapp;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,9 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.covidscreeningapp.R;
-
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity_visitor extends AppCompatActivity {
 
     TextView fname, lname, mobile, location;
     Button delete_button;
@@ -27,7 +23,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail_visitor);
 
         fname = findViewById(R.id.fname1);
         lname = findViewById(R.id.lname1);
@@ -41,11 +37,16 @@ public class DetailActivity extends AppCompatActivity {
         lefticon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(DetailActivity.this,EmployeeListMain.class);
+                Intent intent1 = new Intent(DetailActivity_visitor.this,visitorList.class);
                 startActivity(intent1);
             }
         });
 
+        //Set actionbar title after getAndSetIntentData method
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setTitle("Detail");
+        }
         // To-do
         delete_button.setOnClickListener(new View.OnClickListener() {
             @Override

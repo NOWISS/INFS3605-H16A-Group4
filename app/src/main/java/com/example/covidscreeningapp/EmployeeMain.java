@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ public class EmployeeMain extends AppCompatActivity {
     private Button btn;
     private TextView checkin, checkout;
     private String checkinTime,CheckoutTime;
+    private ImageView lefticon;
+
 
 
     @Override
@@ -38,6 +41,16 @@ public class EmployeeMain extends AppCompatActivity {
         destination = findViewById(R.id.destination);
         checkin = findViewById(R.id.checkin);
         checkout = findViewById(R.id.Checkout);
+
+        lefticon = findViewById(R.id.back);
+        // Make the return button
+        lefticon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(EmployeeMain.this,MainActivity.class);
+                startActivity(intent1);
+            }
+        });
 
         String fn = firstname.getText().toString();
         String ln = lastname.getText().toString();

@@ -4,6 +4,11 @@ public class Employee {
 
     String Firstname, Lastname, mobile, destination, vax, result;
     String checkin,checkout;
+    String color;
+
+    public String getColor() { return color; }
+
+    public void setColor(String color) { this.color = color; }
 
     public String getCheckin() {
         return checkin;
@@ -70,7 +75,7 @@ public class Employee {
         this.result = result;
     }
 
-    public Employee(String firstname, String lastname, String mobile, String destination, String vax, String result, String checkin, String checkout) {
+    public Employee(String firstname, String lastname, String mobile, String destination, String vax, String result, String checkin, String checkout, String color) {
         Firstname = firstname;
         Lastname = lastname;
         this.mobile = mobile;
@@ -79,6 +84,7 @@ public class Employee {
         this.result = result;
         this.checkin = checkin;
         this.checkout = checkout;
+        this.color = color;
     }
 
     public Employee() {

@@ -2,20 +2,40 @@ package com.example.covidscreeningapp;
 
 public class VisitorModel {
 
-    private String Firstname, Lastname, mobile, destination;
-    private boolean Seconddose, Thirddose,pass;
+    private String Firstname;
+    private String Lastname;
+    private String mobile;
+    private String destination;
+    private String checkin;
+    private String checkout;
+    private String color;
+
 
     // constructor
-    public VisitorModel(String firstname, String lastname, String mobile, String destination) {
+    public VisitorModel(String firstname, String lastname, String mobile, String destination, String checkin, String checkout, String color) {
         this.Firstname = firstname;
         this.Lastname = lastname;
         this.mobile = mobile;
         this.destination = destination;
+        this.checkin = checkin;
+        this.checkout = checkout;
+        this.color=color;
 
     }
     public VisitorModel() { }
 
     // getter setter
+    public String getColor() { return color; }
+
+    public void setColor(String color) { this.color = color; }
+
+    public String getCheckin() { return checkin; }
+
+    public void setCheckin(String checkin) { this.checkin = checkin; }
+
+    public String getCheckout() { return checkout; }
+
+    public void setCheckout(String checkout) { this.checkout = checkout; }
 
     public String getFirstname() {
         return Firstname;
@@ -49,40 +69,5 @@ public class VisitorModel {
         this.destination = destination;
     }
 
-    public boolean isSeconddose() {
-        return Seconddose;
-    }
 
-    public void setSeconddose(boolean seconddose) {
-        Seconddose = seconddose;
-    }
-
-    public boolean isThirddose() {
-        return Thirddose;
-    }
-
-    public void setThirddose(boolean thirddose) {
-        Thirddose = thirddose;
-    }
-
-    public boolean isPass() {
-        return pass;
-    }
-
-    public void setPass(boolean pass) {
-        this.pass = pass;
-    }
-    // toString is for printing the contents of this class
-    @Override
-    public String toString() {
-        return "VisitorModel{" +
-                "Firstname='" + Firstname + '\'' +
-                ", Lastname='" + Lastname + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", destination='" + destination + '\'' +
-                ", Seconddose=" + Seconddose +
-                ", Thirddose=" + Thirddose +
-                ", pass=" + pass +
-                '}';
-    }
 }

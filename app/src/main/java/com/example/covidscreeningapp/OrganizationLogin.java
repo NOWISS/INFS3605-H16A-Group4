@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class OrganizationLogin extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class OrganizationLogin extends AppCompatActivity {
     private EditText etUsername, etPassword;
     private Button btnLogin;
     private TextView tvLoginError;
+    private ImageView lefticon;
 
 
     // user names and passwords are assigned to organizations therefore they are not allowed to register
@@ -39,6 +41,16 @@ public class OrganizationLogin extends AppCompatActivity {
         btnLogin.setEnabled(false);
         tvLoginError = (TextView) findViewById(R.id.tvLoginError);
 
+        lefticon = findViewById(R.id.back);
+        // Make the return button
+        lefticon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(OrganizationLogin.this,MainActivity.class);
+                startActivity(intent1);
+            }
+        });
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +63,7 @@ public class OrganizationLogin extends AppCompatActivity {
                 if(!isValid){
                     tvLoginError.setText("Username or password is incorrect, please try again");
                 }else{
-                    Intent intent = new Intent(OrganizationLogin.this, EmployeeListMain.class);
+                    Intent intent = new Intent(OrganizationLogin.this, SelectPortal.class);
                     intent.putExtra("OrgUserName",username);
                     intent.putExtra("OrgPassword",password);
                     startActivity(intent);
