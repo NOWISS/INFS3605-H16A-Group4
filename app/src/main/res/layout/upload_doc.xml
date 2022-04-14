@@ -99,12 +99,13 @@
     </androidx.cardview.widget.CardView>
 
     <android.widget.Button
+        android:textColor="#FFFFFF"
+        android:background="@drawable/login_button"
         android:id="@+id/btnup"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginBottom="48dp"
         android:text="UPLOAD"
-        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

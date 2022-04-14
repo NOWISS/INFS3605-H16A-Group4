@@ -46,15 +46,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.456" />
 
-    <Button
+    <android.widget.Button
+        android:textColor="#FFFFFF"
+        android:background="@drawable/login_button"
         android:id="@+id/emp"
         android:layout_width="297dp"
         android:layout_height="44dp"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="81dp"
-        android:backgroundTint="#ACACAC"
         android:text="Sign In As an Employee"
-        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,19 +66,20 @@
     <Button
         android:id="@+id/org"
         android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_height="44dp"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="81dp"
-        android:backgroundTint="#AAAAAA"
+        android:background="@drawable/login_button"
         android:text="Sign In As an Organization"
-        android:textColor="@color/black"
+        android:textColor="#FFFFFF"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.542" />
+
 
     <Button
         android:id="@+id/visitor"
@@ -88,66 +89,55 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="81dp"
         android:layout_marginBottom="138dp"
-        android:backgroundTint="#B1B1B1"
+        android:background="@drawable/login_button"
         android:text="Sign In As a visitor"
-        android:textColor="@color/black"
+        android:textColor="#FFFFFF"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emp"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.277" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="294dp"
         android:layout_height="56dp"
-        android:text="I have read, understood and accepted the"
+        android:text="By signing in you are agreeing our"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintVertical_bias="0.955" />
 
     <ImageButton
         android:id="@+id/dialog_btn"
-        android:layout_width="91dp"
-        android:layout_height="16dp"
+        android:layout_width="151dp"
+        android:layout_height="18dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="31dp"
-        android:layout_height="27dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintVertical_bias="0.928" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Privacy Policy"
+        android:text="Term and Privacy Policy"
         android:textColor="#F99906"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.373"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869" />
+        app:layout_constraintVertical_bias="0.929" />
 
     <ImageView
         android:id="@+id/imageView2"

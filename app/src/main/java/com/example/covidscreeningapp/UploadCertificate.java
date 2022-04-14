@@ -149,8 +149,9 @@ public class UploadCertificate extends AppCompatActivity {
                                             generateId();
                                             Log.d(TAG, "ID:" + generateId());
                                             root.child(String.valueOf(latestId)).setValue(emp);
-                                            Toast.makeText(UploadCertificate.this, "Your PCR/RAT result is Uploaded Successfully!", Toast.LENGTH_SHORT).show();
                                             pd.dismiss();
+                                            Toast.makeText(UploadCertificate.this, "Your Certificates Are Uploaded Successfully!", Toast.LENGTH_SHORT).show();
+
                                         }
                                     });
                                 }

@@ -49,6 +49,8 @@ public class EmpAdapter extends RecyclerView.Adapter<EmpAdapter.MyViewHolder> {
                 intent.putExtra("lastname", emp.getLastname());
                 intent.putExtra("mobile", emp.getMobile());
                 intent.putExtra("destination", emp.getDestination());
+                intent.putExtra("vax",emp.getVax());
+                intent.putExtra("result",emp.getResult());
                 context.startActivity(intent);
             }
         });

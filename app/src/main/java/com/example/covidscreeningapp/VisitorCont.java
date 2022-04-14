@@ -92,7 +92,17 @@ public class VisitorCont extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(points==0||points==1){
+
+                int Id1 = rg1.getCheckedRadioButtonId();
+                int Id2 = rg2.getCheckedRadioButtonId();
+                int Id3 = rg3.getCheckedRadioButtonId();
+                int Id4 = rg4.getCheckedRadioButtonId();
+                int Id5 = rg5.getCheckedRadioButtonId();
+
+                if (Id1 == -1||Id2 == -1||Id3 == -1||Id4 == -1||Id5 == -1) {
+                    t5.setText("Please answer all questions");
+
+                }else if(points==0||points==1){
                     color = Green;
                 }else if (points==2){
                     color = Yellow;

@@ -15,7 +15,7 @@ public class DetailActivity_visitor extends AppCompatActivity {
 
     TextView fname, lname, mobile, location;
     Button delete_button;
-    String id, fnamee, lnamee, mobilee, locationn;
+    String in, out, mobilee, locationn;
     private ImageView lefticon;
 
 
@@ -37,16 +37,11 @@ public class DetailActivity_visitor extends AppCompatActivity {
         lefticon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(DetailActivity_visitor.this,visitorList.class);
+                Intent intent1 = new Intent(DetailActivity_visitor.this,SelectPortal.class);
                 startActivity(intent1);
             }
         });
 
-        //Set actionbar title after getAndSetIntentData method
-        ActionBar ab = getSupportActionBar();
-        if (ab != null) {
-            ab.setTitle("Detail");
-        }
         // To-do
         delete_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,16 +54,16 @@ public class DetailActivity_visitor extends AppCompatActivity {
         if(getIntent().hasExtra("firstname") &&
                 getIntent().hasExtra("lastname") && getIntent().hasExtra("mobile")&& getIntent().hasExtra("destination")){
             //Getting Data from Intent
-            fnamee = getIntent().getStringExtra("firstname");
-            lnamee = getIntent().getStringExtra("lastname");
+            in = getIntent().getStringExtra("checkin");
+            out = getIntent().getStringExtra("checkout");
             mobilee = getIntent().getStringExtra("mobile");
             locationn = getIntent().getStringExtra("destination");
 
             //Setting Intent Data
-            fname.setText("First Name: "+ fnamee);
-            lname.setText("Last Name: "+lnamee);
-            mobile.setText("Mobile Number: "+mobilee);
-            location.setText("Location: "+locationn);
+            fname.setText("Check-in Time: "+ in);
+            lname.setText("Checkout TIme: "+ out);
+            mobile.setText("Mobile Number: "+ mobilee);
+            location.setText("Location: "+ locationn);
 
         }else{
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();

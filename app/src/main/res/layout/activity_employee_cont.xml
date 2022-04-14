@@ -158,7 +158,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.446" />
 
-    <Button
+    <android.widget.Button
+        android:textColor="#FFFFFF"
+        android:background="@drawable/login_button"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -168,7 +170,7 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.973" />
 
     <RadioGroup
         android:id="@+id/radioGroup4"

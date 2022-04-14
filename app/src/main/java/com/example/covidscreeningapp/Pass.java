@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Pass extends AppCompatActivity {
@@ -12,7 +14,7 @@ public class Pass extends AppCompatActivity {
     private static final String TAG = "PASS";
     private String FirstName, LastName,color,location;
     private TextView tv;
-
+    private ImageView lefticon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,17 @@ public class Pass extends AppCompatActivity {
             LastName = bundle.getString("lastname");
             color = bundle.getString("color");
             location = bundle.getString("location");
+
+            lefticon = findViewById(R.id.back);
+            // Make the return button
+            lefticon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent1 = new Intent(Pass.this,MainActivity.class);
+                    startActivity(intent1);
+                }
+            });
+
         }
         // generate pass token
         if (color.equals("Green")){

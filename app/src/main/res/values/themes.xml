@@ -17,7 +17,13 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="customchip" parent="Widget.AppCompat.Button.Colored">
+        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="android:textColor">@color/chip_textcolor</item>
+        <item name="checkedIconTint">@color/white</item>
+    </style>
     <style name="Theme.CovidScreeningApp.AppBarOverlay"
         parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.CovidScreeningApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

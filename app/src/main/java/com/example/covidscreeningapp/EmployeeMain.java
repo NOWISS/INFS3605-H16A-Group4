@@ -8,16 +8,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class EmployeeMain extends AppCompatActivity {
 
@@ -25,8 +30,9 @@ public class EmployeeMain extends AppCompatActivity {
     private EditText firstname, lastname,mobile,destination;
     private Button btn;
     private TextView checkin, checkout;
-    private String checkinTime,CheckoutTime;
+    private String fn,ln,mb,des,checkinTime,CheckoutTime;
     private ImageView lefticon;
+    private Spinner sp;
 
 
 
@@ -38,9 +44,9 @@ public class EmployeeMain extends AppCompatActivity {
         firstname = findViewById(R.id.fnames);
         lastname = findViewById(R.id.lnames);
         mobile = findViewById(R.id.mobile);
-        destination = findViewById(R.id.destination);
         checkin = findViewById(R.id.checkin);
         checkout = findViewById(R.id.Checkout);
+        sp = findViewById(R.id.spinner);
 
         lefticon = findViewById(R.id.back);
         // Make the return button
@@ -52,22 +58,34 @@ public class EmployeeMain extends AppCompatActivity {
             }
         });
 
-        String fn = firstname.getText().toString();
-        String ln = lastname.getText().toString();
-        String mb = mobile.getText().toString();
-        String des = destination.getText().toString();
+        // set spinner
+        String[] lvls = {"ground","level 1","level 2", "level 3", "level 4", "level 5"};
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,lvls);
+        sp.setAdapter(arrayAdapter);
+
 
         checkin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkinTime =showDateTimeDialog(checkin);
+                showDateTimeDialog(checkin);
             }
         });
 
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 CheckoutTime=showDateTimeDialog(checkout);
+                 showDateTimeDialog1(checkout);
+            }
+        });
+
+        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                des = adapterView.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
 
@@ -76,10 +94,15 @@ public class EmployeeMain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (firstname.equals("")||lastname.equals("")||mobile.equals("")||destination.equals("")||checkin.equals("")
+                if (firstname.equals("")||lastname.equals("")||mobile.equals("")||des.equals("")||checkin.equals("")
                 ||checkout.equals("")){
                     Toast.makeText(EmployeeMain.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
                 }else {
+
+
+                    fn = firstname.getText().toString();
+                    ln = lastname.getText().toString();
+                    mb = mobile.getText().toString();
 
                     Intent intent = new Intent(EmployeeMain.this, EmployeeCont.class);
                     Bundle extras = new Bundle();
@@ -88,8 +111,10 @@ public class EmployeeMain extends AppCompatActivity {
                     extras.putString("lastname", ln);
                     extras.putString("mobile", mb);
                     extras.putString("destination", des);
+                    Log.d(TAG, "DES: " + des);
                     extras.putString("checkin", checkinTime);
                     extras.putString("checkout", CheckoutTime);
+                    Log.d(TAG, "time: "+checkinTime+CheckoutTime);
                     intent.putExtras(extras);
                     startActivity(intent);
                 }
@@ -111,8 +136,45 @@ public class EmployeeMain extends AppCompatActivity {
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
                         calendar.set(Calendar.MINUTE,minute);
-                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss z");
-                        date_time_in.setText(sdf.format(calendar.getTime()));
+                        DateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy hh:mm");
+                        sdf.setTimeZone(TimeZone.getTimeZone("Australia/Sydney"));
+                        String strDate = sdf.format(calendar.getTime());
+                        checkinTime = strDate;
+                        date_time_in.setText(strDate);
+                        Log.d(TAG, "onTimeSet: "+strDate+checkinTime);
+
+                    }
+                };
+
+                new TimePickerDialog(EmployeeMain.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
+            }
+        };
+
+        new DatePickerDialog(EmployeeMain.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+
+        return String.valueOf(date_time_in);
+    }
+
+    private String showDateTimeDialog1(TextView date_time_in) {
+        final Calendar calendar=Calendar.getInstance();
+        DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                calendar.set(Calendar.YEAR,year);
+                calendar.set(Calendar.MONTH,month);
+                calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+
+                TimePickerDialog.OnTimeSetListener timeSetListener=new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
+                        calendar.set(Calendar.MINUTE,minute);
+                        DateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss");
+                        sdf.setTimeZone(TimeZone.getTimeZone("Australia/Sydney"));
+                        String strDate = sdf.format(calendar.getTime());
+                        CheckoutTime = strDate;
+                        date_time_in.setText(strDate);
+                        Log.d(TAG, "onTimeSet: "+strDate+CheckoutTime);
 
                     }
                 };

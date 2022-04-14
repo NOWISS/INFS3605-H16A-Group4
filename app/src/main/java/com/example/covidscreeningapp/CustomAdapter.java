@@ -37,16 +37,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         VisitorModel vs = list.get(position);
-        holder.firstname_txt.setText(vs.getFirstname());
-        holder.lastname_txt.setText(vs.getLastname());
-        holder.mobile_txt.setText(vs.getMobile());
+        holder.firstname_txt.setText(vs.getMobile());
+        holder.lastname_txt.setText(vs.getCheckout());
+        holder.mobile_txt.setText(vs.getCheckin());
         holder.destination_txt.setText(vs.getDestination());
         holder.mainlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity_visitor.class);
-                intent.putExtra("firstname", vs.getFirstname());
-                intent.putExtra("lastname", vs.getLastname());
+                intent.putExtra("Checkin", vs.getCheckin());
+                intent.putExtra("Checkout", vs.getCheckout());
                 intent.putExtra("mobile", vs.getMobile());
                 intent.putExtra("destination", vs.getDestination());
                 context.startActivity(intent);
