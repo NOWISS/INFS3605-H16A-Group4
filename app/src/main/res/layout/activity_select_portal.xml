@@ -116,7 +116,7 @@
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="28dp"
+                android:layout_marginEnd="24dp"
                 android:padding="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/time"
                 app:layout_constraintTop_toTopOf="parent" />

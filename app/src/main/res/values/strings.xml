@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Covid Screening App</string>
+    <string name="checkbox">com.example.covidscreeningapp.checkbox</string>
+    <string name="firstname">com.example.covidscreeningapp.firstname</string>
+    <string name="lastname">com.example.covidscreeningapp.lastname</string>
+    <string name="mobile">com.example.covidscreeningapp.mobile</string>
     <string name="title_activity_employee_main">EmployeeMain</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

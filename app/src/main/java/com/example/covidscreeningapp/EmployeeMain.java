@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,6 +36,9 @@ public class EmployeeMain extends AppCompatActivity {
     private String fn,ln,mb,des,checkinTime,CheckoutTime;
     private ImageView lefticon;
     private Spinner sp;
+    private SharedPreferences mPreferences;
+    private SharedPreferences.Editor mEditor;
+    private CheckBox mCheckBox;
 
 
 
@@ -47,6 +53,7 @@ public class EmployeeMain extends AppCompatActivity {
         checkin = findViewById(R.id.checkin);
         checkout = findViewById(R.id.Checkout);
         sp = findViewById(R.id.spinner);
+        mCheckBox = findViewById(R.id.checkBox);
 
         lefticon = findViewById(R.id.back);
         // Make the return button
@@ -57,6 +64,10 @@ public class EmployeeMain extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mPreferences.edit();
+        checkSharePreferences();
 
         // set spinner
         String[] lvls = {"ground","level 1","level 2", "level 3", "level 4", "level 5"};
@@ -103,6 +114,25 @@ public class EmployeeMain extends AppCompatActivity {
                     fn = firstname.getText().toString();
                     ln = lastname.getText().toString();
                     mb = mobile.getText().toString();
+                    if (mCheckBox.isChecked()){
+                        mEditor.putString(getString(R.string.checkbox),"True");
+                        mEditor.commit();
+                        mEditor.putString(getString(R.string.firstname),fn);
+                        mEditor.commit();
+                        mEditor.putString(getString(R.string.lastname),ln);
+                        mEditor.commit();
+                        mEditor.putString(getString(R.string.mobile),mb);
+                        mEditor.commit();
+                    }else{
+                        mEditor.putString(getString(R.string.checkbox),"False");
+                        mEditor.commit();
+                        mEditor.putString(getString(R.string.firstname),"");
+                        mEditor.commit();
+                        mEditor.putString(getString(R.string.lastname),"");
+                        mEditor.commit();
+                        mEditor.putString(getString(R.string.mobile),"");
+                        mEditor.commit();
+                    }
 
                     Intent intent = new Intent(EmployeeMain.this, EmployeeCont.class);
                     Bundle extras = new Bundle();
@@ -186,5 +216,22 @@ public class EmployeeMain extends AppCompatActivity {
         new DatePickerDialog(EmployeeMain.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
 
         return String.valueOf(date_time_in);
+    }
+    // Check the shared preferences and set
+    private void checkSharePreferences(){
+        String checkbox = mPreferences.getString(getString(R.string.checkbox),"false");
+        String b1 = mPreferences.getString(getString(R.string.firstname),"");
+        String b2 = mPreferences.getString(getString(R.string.lastname),"");
+        String b3 = mPreferences.getString(getString(R.string.mobile),"");
+
+        firstname.setText(b1);
+        lastname.setText(b2);
+        mobile.setText(b3);
+        if (checkbox.equals("True")){
+            mCheckBox.setChecked(true);
+        }else{
+            mCheckBox.setChecked(false);
+        }
+
     }
 }
