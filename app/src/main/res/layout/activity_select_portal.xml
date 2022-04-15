@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFBEF"
+    android:background="#FFFFFF"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -41,7 +41,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white">
+            android:background="@drawable/gradient">
 
             <TextView
                 android:id="@+id/occupancy"
@@ -74,13 +74,13 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="93dp"
+                android:layout_height="88dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_groups_24" />
+                app:srcCompat="@drawable/people" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -99,15 +99,13 @@
             android:background="@color/eggshell">
 
             <Spinner
-                android:id="@+id/level"
-                android:layout_width="130dp"
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="39dp"
+                android:layout_marginTop="52dp"
                 android:padding="20dp"
-                app:layout_constraintEnd_toStartOf="@+id/color"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.898"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,20 +113,22 @@
                 android:id="@+id/color"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="28dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="32dp"
                 android:padding="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/time"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
+                android:id="@+id/level"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="39dp"
                 android:padding="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.945"
+                app:layout_constraintEnd_toStartOf="@+id/color"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -142,35 +142,64 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/level" />
 
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="16dp"
+                android:text="Building Level"
+                app:layout_constraintBottom_toTopOf="@+id/level"
+                app:layout_constraintStart_toStartOf="@+id/level" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="16dp"
+                android:text="Screening Colour"
+                app:layout_constraintBottom_toTopOf="@+id/color"
+                app:layout_constraintStart_toStartOf="@+id/color" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="Filter"
+                app:layout_constraintBottom_toTopOf="@+id/time"
+                app:layout_constraintStart_toStartOf="@+id/time" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <android.widget.Button
         android:id="@+id/emp"
-        android:background="@color/chip_background"
-        android:textColorHint="@color/chip_textcolor"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="257dp"
+        android:layout_width="169dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="264dp"
+        android:background="#FBE5C5"
         android:text="Employee list"
+        android:textColorHint="@color/chip_textcolor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.widget.Button
         android:id="@+id/vis"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="257dp"
-        android:background="@color/chip_background"
+        android:layout_width="169dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="264dp"
+        android:background="#DC9BB9"
         android:text="Visitor list"
         android:textColorHint="@color/chip_textcolor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintHorizontal_bias="0.876"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
