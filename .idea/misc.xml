@@ -3,8 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable-v24/login_button.xml" value="0.25625" />
-        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2078125" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.27291666666666664" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1859375" />
         <entry key="app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.1859375" />
@@ -12,23 +10,22 @@
         <entry key="app/src/main/res/layout/activity_consent_page.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_consent_popup.xml" value="0.24791666666666667" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.2355960837671708" />
-        <entry key="app/src/main/res/layout/activity_detail_visitor.xml" value="0.22604166666666667" />
-        <entry key="app/src/main/res/layout/activity_employee_cont.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_detail_visitor.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/layout/activity_employee_cont.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_employee_list_main.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_employee_login.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_employee_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1796875" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21429208568742814" />
         <entry key="app/src/main/res/layout/activity_organization_login.xml" value="0.23427357558439943" />
         <entry key="app/src/main/res/layout/activity_organization_main.xml" value="0.24947916666666667" />
-        <entry key="app/src/main/res/layout/activity_pass.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_select_portal.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_visitor_check_in.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_visitor_cont.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_pass.xml" value="0.29635416666666664" />
+        <entry key="app/src/main/res/layout/activity_select_portal.xml" value="0.5175621111560874" />
+        <entry key="app/src/main/res/layout/activity_visitor_check_in.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_visitor_cont.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_visitor_list_main.xml" value="0.28125" />
-        <entry key="app/src/main/res/layout/chip.xml" value="0.625" />
         <entry key="app/src/main/res/layout/row.xml" value="0.2953125" />
-        <entry key="app/src/main/res/layout/row1.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/row1.xml" value="0.19583333333333333" />
         <entry key="app/src/main/res/layout/upload_doc.xml" value="0.24010416666666667" />
         <entry key="app/src/main/res/layout/upload_vax.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.16979166666666667" />
