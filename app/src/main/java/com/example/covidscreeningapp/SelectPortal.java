@@ -29,7 +29,7 @@ public class SelectPortal extends AppCompatActivity {
 
     private String TAG = "SelectPortal";
     private Button emp,vis;
-    private ImageView lefticon;
+    private ImageView lefticon,que;
     private Spinner lvl,color,reset;
     private String lv,co,ti;
     private RecyclerView recyclerView;
@@ -54,6 +54,15 @@ public class SelectPortal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(SelectPortal.this,OrganizationLogin.class);
+                startActivity(intent1);
+            }
+        });
+        que = findViewById(R.id.que);
+        // Make the return button
+        que.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(SelectPortal.this,HelpPage.class);
                 startActivity(intent1);
             }
         });
