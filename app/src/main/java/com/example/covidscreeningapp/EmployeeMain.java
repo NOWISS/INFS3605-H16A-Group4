@@ -32,7 +32,7 @@ public class EmployeeMain extends AppCompatActivity {
     public static final String TAG = "EMP_MAIN";
     private EditText firstname, lastname,mobile,destination;
     private Button btn;
-    private TextView checkin, checkout;
+    private TextView checkin, checkout,t5;
     private String fn,ln,mb,des,checkinTime,CheckoutTime;
     private ImageView lefticon;
     private Spinner sp;
@@ -54,6 +54,7 @@ public class EmployeeMain extends AppCompatActivity {
         checkout = findViewById(R.id.Checkout);
         sp = findViewById(R.id.spinner);
         mCheckBox = findViewById(R.id.checkBox);
+        t5 = findViewById(R.id.w5);
 
         lefticon = findViewById(R.id.back);
         // Make the return button
@@ -100,14 +101,14 @@ public class EmployeeMain extends AppCompatActivity {
             }
         });
 
-        btn = findViewById(R.id.button);
+        btn = findViewById(R.id.button1);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (firstname.equals("")||lastname.equals("")||mobile.equals("")||des.equals("")||checkin.equals("")
-                ||checkout.equals("")){
-                    Toast.makeText(EmployeeMain.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                if (isEmpty(firstname)==true||isEmpty(lastname)==true||isEmpty(mobile)==true||checkin==null||checkout.equals(null)){
+                    //Toast.makeText(EmployeeMain.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                    t5.setText("Please fill in all information");
                 }else {
 
 
@@ -232,6 +233,11 @@ public class EmployeeMain extends AppCompatActivity {
         }else{
             mCheckBox.setChecked(false);
         }
+    }
+    private boolean isEmpty(EditText etText) {
+        if (etText.getText().toString().trim().length() > 0)
+            return false;
 
+        return true;
     }
 }
