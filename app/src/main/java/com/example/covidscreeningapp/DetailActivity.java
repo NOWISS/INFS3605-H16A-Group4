@@ -8,6 +8,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,9 +18,16 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.covidscreeningapp.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class DetailActivity extends AppCompatActivity {
 
+    private static final String TAG = "Employee Detail";
     TextView fname, lname, mobile, location;
     Button delete_button,Okay;
     String fnamee, lnamee, mobilee, locationn,vax,result;
@@ -56,7 +64,8 @@ public class DetailActivity extends AppCompatActivity {
         delete_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                AlertDialog diaBox = AskOption();
+                diaBox.show();
             }
         });
     }
@@ -88,5 +97,41 @@ public class DetailActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
         }
+    }
+    private AlertDialog AskOption()
+    {
+        AlertDialog myQuittingDialogBox = new AlertDialog.Builder(this)
+                // set message, title, and icon
+                .setTitle("Delete")
+                .setMessage("Do you want to Delete")
+                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        //your deleting code
+                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+                        Query query = ref.child("Employee").orderByChild("mobile").equalTo(mobilee);
+                        query.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot DeSnapshot: dataSnapshot.getChildren()) {
+                                    DeSnapshot.getRef().removeValue();
+                                }
+                            }
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                Log.e(TAG, "onCancelled", databaseError.toException());
+                            }
+                        });
+                        dialog.dismiss();
+                        Intent intentdelete = new Intent(DetailActivity.this,SelectPortal.class);
+                        startActivity(intentdelete);
+                    }
+                })
+                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+        return myQuittingDialogBox;
     }
 }
