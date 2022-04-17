@@ -33,7 +33,7 @@ public class VisitorCheckIn extends AppCompatActivity {
     private String fn,ln,mb,des,checkinTime,CheckoutTime;
     private Spinner sp;
     private Button btn;
-    private TextView checkin, checkout;
+    private TextView checkin, checkout,t5;
     private ImageView lefticon;
 
 
@@ -58,6 +58,7 @@ public class VisitorCheckIn extends AppCompatActivity {
         checkin = findViewById(R.id.checkin);
         checkout = findViewById(R.id.Checkout);
         sp = findViewById(R.id.spinner_visitor);
+        t5 = findViewById(R.id.w5);
         //arrayAdapter is used for the dropdown view
         // set spinner
         String[] lvls = {"ground","level 1","level 2", "level 3", "level 4", "level 5"};
@@ -95,13 +96,13 @@ public class VisitorCheckIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (firstname.equals("")||lastname.equals("")||mobile.equals("")||des.equals("")){
-                    Toast.makeText(VisitorCheckIn.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                if (isEmpty(firstname)==true||isEmpty(lastname)==true||isEmpty(mobile)==true||des.equals(null)||checkin==null||checkout.equals(null)){
+                    //Toast.makeText(EmployeeMain.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                    t5.setText("Please fill in all information");
                 }else {
-
-                     fn = firstname.getText().toString();
-                     ln = lastname.getText().toString();
-                     mb = mobile.getText().toString();
+                    fn = firstname.getText().toString();
+                    ln = lastname.getText().toString();
+                    mb = mobile.getText().toString();
 
                     Intent intent = new Intent(VisitorCheckIn.this, VisitorCont.class);
                     Bundle extras = new Bundle();
@@ -182,5 +183,11 @@ public class VisitorCheckIn extends AppCompatActivity {
         new DatePickerDialog(VisitorCheckIn.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
 
         return String.valueOf(date_time_in);
+    }
+    private boolean isEmpty(EditText etText) {
+        if (etText.getText().toString().trim().length() > 0)
+            return false;
+
+        return true;
     }
 }
