@@ -14,7 +14,7 @@
         <entry key="app/src/main/res/layout/activity_employee_cont.xml" value="0.10436860416110773" />
         <entry key="app/src/main/res/layout/activity_employee_list_main.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_employee_login.xml" value="0.24947916666666667" />
-        <entry key="app/src/main/res/layout/activity_employee_main.xml" value="0.3165391939672172" />
+        <entry key="app/src/main/res/layout/activity_employee_main.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_help_page.xml" value="0.5541666666666667" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1796875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21429208568742814" />
@@ -22,7 +22,7 @@
         <entry key="app/src/main/res/layout/activity_organization_main.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_pass.xml" value="0.29635416666666664" />
         <entry key="app/src/main/res/layout/activity_select_portal.xml" value="0.5175621111560874" />
-        <entry key="app/src/main/res/layout/activity_visitor_check_in.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_visitor_check_in.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_visitor_cont.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_visitor_list_main.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/row.xml" value="0.2953125" />
