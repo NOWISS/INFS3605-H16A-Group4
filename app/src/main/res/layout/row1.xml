@@ -18,61 +18,52 @@
             android:padding="12dp">
 
             <TextView
-                android:id="@+id/id_vi"
+                android:id="@+id/Firstname_vi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint=" "
-                android:textSize="40sp"
-                android:textStyle="bold"
+                android:hint="Name"
                 android:textColor="#000"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.02"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/Firstname_vi"
+                android:id="@+id/Lastname_vi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:hint="Mobile"
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/id_vi"
-                app:layout_constraintTop_toTopOf="@+id/id_vi" />
-
-            <TextView
-                android:id="@+id/Lastname_vi"
-                android:layout_width="126dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="236dp"
-                android:layout_marginTop="4dp"
-                android:hint="CheckOut Time"
-                android:gravity="center"
-                android:textAlignment="center"
+                android:hint="Location"
                 app:layout_constraintStart_toStartOf="@+id/Firstname_vi"
                 app:layout_constraintTop_toBottomOf="@+id/Firstname_vi" />
+
+
+            <TextView
+                android:id="@+id/color"
+                android:layout_width="126dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="31dp"
+                android:gravity="center"
+                android:hint="color"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.764"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/Mobile_vi"
                 android:layout_width="125dp"
                 android:layout_height="23dp"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:hint="CheckIn"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/Destination_vi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="292dp"
-                android:hint="Location"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/color"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

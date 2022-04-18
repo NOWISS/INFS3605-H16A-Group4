@@ -38,9 +38,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         VisitorModel vs = list.get(position);
         holder.firstname_txt.setText("Visitor "+ position);
-        holder.lastname_txt.setText(vs.getCheckout());
+        holder.lastname_txt.setText(vs.getDestination());
         holder.mobile_txt.setText(vs.getCheckin());
-        holder.destination_txt.setText(vs.getDestination());
+        holder.destination_txt.setText(vs.getColor());
         holder.mainlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +49,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 intent.putExtra("Checkout", vs.getCheckout());
                 intent.putExtra("mobile", vs.getMobile());
                 intent.putExtra("destination", vs.getDestination());
+                intent.putExtra("color", vs.getColor());
                 context.startActivity(intent);
             }
         });
@@ -62,16 +63,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView id_txt, firstname_txt, lastname_txt, mobile_txt, destination_txt;
+        TextView firstname_txt, lastname_txt, mobile_txt, destination_txt;
         LinearLayout mainlayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            id_txt = itemView.findViewById(R.id.id_vi);
             firstname_txt = itemView.findViewById(R.id.Firstname_vi);
             lastname_txt = itemView.findViewById(R.id.Lastname_vi);
             mobile_txt = itemView.findViewById(R.id.Mobile_vi);
-            destination_txt = itemView.findViewById(R.id.Destination_vi);
+            destination_txt = itemView.findViewById(R.id.color);
             mainlayout = itemView.findViewById(R.id.mainLayout_vi);
             //Animate Recyclerview
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);

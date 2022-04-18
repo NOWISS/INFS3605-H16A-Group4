@@ -24,9 +24,9 @@ import com.google.firebase.database.ValueEventListener;
 public class DetailActivity_visitor extends AppCompatActivity {
 
     private static final String TAG = "Visitor Detail";
-    TextView fname, lname, mobile, location;
+    TextView fname, lname, mobile, location,showcolor;
     Button delete_button;
-    String in, out, mobilee, locationn;
+    String in, out, mobilee, locationn,colorr;
     private ImageView lefticon;
 
 
@@ -41,6 +41,7 @@ public class DetailActivity_visitor extends AppCompatActivity {
         mobile = findViewById(R.id.mb1);
         location = findViewById(R.id.location);
         delete_button = findViewById(R.id.btndelete);
+        showcolor = findViewById(R.id.color2);
         getAndSetIntentData();
 
         lefticon = findViewById(R.id.back);
@@ -70,12 +71,14 @@ public class DetailActivity_visitor extends AppCompatActivity {
             out = getIntent().getStringExtra("Checkout");
             mobilee = getIntent().getStringExtra("mobile");
             locationn = getIntent().getStringExtra("destination");
+            colorr = getIntent().getStringExtra("color");
 
             //Setting Intent Data
             fname.setText("Check-in Time: "+ in);
             lname.setText("Checkout Time: "+ out);
             mobile.setText("Mobile Number: "+ mobilee);
             location.setText("Location: "+ locationn);
+            showcolor.setText("Screening Colour: "+colorr);
 
         }else{
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();

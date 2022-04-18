@@ -94,9 +94,9 @@ public class UploadCertificate extends AppCompatActivity {
             }
         });
 
-        if (points.equals("0") || points.equals("1")) {
+        if (points.equals("0")) {
             color = Green;
-        } else if (points.equals("2")) {
+        } else if (points.equals("2")|| points.equals("1")) {
             color = Yellow;
         } else {
             color = Red;

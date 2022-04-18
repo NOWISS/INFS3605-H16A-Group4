@@ -28,9 +28,9 @@ import com.google.firebase.database.ValueEventListener;
 public class DetailActivity extends AppCompatActivity {
 
     private static final String TAG = "Employee Detail";
-    TextView fname, lname, mobile, location;
+    TextView fname, lname, mobile, location,showcolor;
     Button delete_button,Okay;
-    String fnamee, lnamee, mobilee, locationn,vax,result;
+    String fnamee, lnamee, mobilee, locationn,vax,result,color;
     private ImageView lefticon,showvax,showresult;
 
 
@@ -47,6 +47,7 @@ public class DetailActivity extends AppCompatActivity {
         delete_button = findViewById(R.id.btndelete);
         showvax = findViewById(R.id.showvax);
         showresult = findViewById(R.id.showresult);
+        showcolor = findViewById(R.id.color);
         getAndSetIntentData();
 
         lefticon = findViewById(R.id.back);
@@ -79,12 +80,14 @@ public class DetailActivity extends AppCompatActivity {
             locationn = getIntent().getStringExtra("destination");
             vax = getIntent().getStringExtra("vax");
             result = getIntent().getStringExtra("result");
+            color = getIntent().getStringExtra("color");
 
             //Setting Intent Data
             fname.setText("First Name: "+ fnamee);
             lname.setText("Last Name: "+lnamee);
             mobile.setText("Mobile Number: "+mobilee);
             location.setText("Location: "+locationn);
+            showcolor.setText("Screening Colour: "+color);
             Glide.with(DetailActivity.this)
                     .load(vax)
                     .fitCenter()

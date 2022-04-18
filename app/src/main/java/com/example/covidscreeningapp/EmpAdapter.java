@@ -39,8 +39,8 @@ public class EmpAdapter extends RecyclerView.Adapter<EmpAdapter.MyViewHolder> {
         Employee emp = list.get(position);
         holder.firstname_txt.setText(emp.getFirstname());
         holder.lastname_txt.setText(emp.getLastname());
-        holder.mobile_txt.setText(emp.getMobile());
         holder.destination_txt.setText(emp.getDestination());
+        holder.color.setText(emp.getColor());
         holder.mainlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +51,7 @@ public class EmpAdapter extends RecyclerView.Adapter<EmpAdapter.MyViewHolder> {
                 intent.putExtra("destination", emp.getDestination());
                 intent.putExtra("vax",emp.getVax());
                 intent.putExtra("result",emp.getResult());
+                intent.putExtra("color",emp.getColor());
                 context.startActivity(intent);
             }
         });
@@ -64,16 +65,16 @@ public class EmpAdapter extends RecyclerView.Adapter<EmpAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView id_txt, firstname_txt, lastname_txt, mobile_txt, destination_txt;
+        TextView id_txt, firstname_txt, lastname_txt, mobile_txt, destination_txt,color;
         LinearLayout mainlayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            id_txt = itemView.findViewById(R.id.id);
             firstname_txt = itemView.findViewById(R.id.Firstname);
             lastname_txt = itemView.findViewById(R.id.Lastname);
-            mobile_txt = itemView.findViewById(R.id.Mobile);
+            //mobile_txt = itemView.findViewById(R.id.Mobile);
             destination_txt = itemView.findViewById(R.id.Destination);
+            color = itemView.findViewById(R.id.Color);
             mainlayout = itemView.findViewById(R.id.mainLayout);
             //Animate Recyclerview
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
