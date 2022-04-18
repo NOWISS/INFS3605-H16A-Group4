@@ -120,11 +120,11 @@ public class VisitorCont extends AppCompatActivity {
                 Log.d(TAG, "onClick:"+fn);
                 extras.putString("lastname",ln);
                 extras.putString("mobile",mb);
-                extras.putString("destination",des);
+                extras.putString("location",des);
                 extras.putString("checkin", checkinTime);
                 extras.putString("checkout", CheckoutTime);
                 extras.putString("color",color);
-                Log.d(TAG, "onClick: points"+points+color);
+                Log.d(TAG, "onClick: points"+points+color+des);
                 intent.putExtras(extras);
                 startActivity(intent);
 

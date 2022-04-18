@@ -13,8 +13,8 @@ public class Pass extends AppCompatActivity {
 
     private static final String TAG = "PASS";
     private String FirstName, LastName,color,location;
-    private TextView tv;
-    private ImageView lefticon;
+    private TextView tv,tv28,tv29;
+    private ImageView lefticon,icon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,9 @@ public class Pass extends AppCompatActivity {
         setContentView(R.layout.activity_pass);
 
         tv = findViewById(R.id.textView15);
+        tv28 = findViewById(R.id.textView28);
+        tv29 = findViewById(R.id.textView29);
+        icon = findViewById(R.id.imageView3);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -46,14 +49,24 @@ public class Pass extends AppCompatActivity {
         }
         // generate pass token
         if (color.equals("Green")){
-            tv.setText(FirstName+" "+LastName+", " + "you are approved to pass!");
-            // To-do set background and tick
+            tv.setText(FirstName+", "+LastName+" ");
+            tv28.setText("You have been approved access to "+location);
+            tv29.setText("Your colour code is "+color.toUpperCase()+", which allows you to enter all buildings at the " +
+                    "discretion of your organisation");
+            icon.setImageResource(R.drawable.green);
         }else if (color.equals("Yellow")){
-            tv.setText(FirstName+" "+LastName+", " + "you are approved to pass!");
-            // To-do set background and tick
+            tv.setText(FirstName+", "+LastName+" ");
+            tv28.setText("You have been approved access to "+location);
+            tv29.setText("Your colour code is "+color.toUpperCase()+", which allows you to enter all buildings at the " +
+                    "discretion of your organisation");
+            icon.setImageResource(R.drawable.yellow);
+
         }else{
-            tv.setText("Sorry, "+FirstName+" "+LastName+", " + "you are NOT allowed to go to " + location);
-            // To-do set background and cross
+            tv.setText(FirstName+", "+LastName+" ");
+            tv28.setText("Sorry, you have NOT been approved to enter " + location);
+            tv29.setText("Your screening pass is "+ color.toUpperCase() +", which means you are not alliowed to enter. \n" +
+                    "Please refer to NSW Health guidelines and recommendations");
+            icon.setImageResource(R.drawable.red);
         }
     }
 }
