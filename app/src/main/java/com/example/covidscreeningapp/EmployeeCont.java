@@ -21,7 +21,7 @@ public class EmployeeCont extends AppCompatActivity {
  private RadioButton y1,y2,y3,y4,n1,n2,n3,n4,y5,n5;
  private RadioGroup rg1, rg2, rg3, rg4,rg5;
  private TextView t5;
- private int points=0;
+ private int p1,p2,p3,p4,p5;
  private ImageView lefticon;
 
 
@@ -55,38 +55,37 @@ public class EmployeeCont extends AppCompatActivity {
         rg3 = findViewById(R.id.radioGroup3);
         rg4 = findViewById(R.id.radioGroup4);
         rg5 = findViewById(R.id.radioGroup5);
+        rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p1 = findRadioButton(checkedId);
+                Log.d(TAG, "onCheckedChanged: "+p1);
+            }});
+        rg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p2 = findRadioButton1(checkedId)+p1;
+                Log.d(TAG, "onCheckedChanged: "+p2);
+            }});
+        rg3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p3 = findRadioButton2(checkedId)+p2;
+                Log.d(TAG, "onCheckedChanged: "+p3);
+            }});
+        rg4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p4 = findRadioButton3(checkedId)+p3;
+                Log.d(TAG, "onCheckedChanged: "+p4);
+            }});
+        rg5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p5 = findRadioButton4(checkedId)+p4;
+                Log.d(TAG, "onCheckedChanged: "+p5);
+            }});
 
 
         btn = findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
-                rg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton1(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
-                rg3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton2(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
-                rg4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton3(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
-                rg5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton4(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
-
                 int Id1 = rg1.getCheckedRadioButtonId();
                 int Id2 = rg2.getCheckedRadioButtonId();
                 int Id3 = rg3.getCheckedRadioButtonId();
@@ -108,8 +107,8 @@ public class EmployeeCont extends AppCompatActivity {
                     extras.putString("destination", des);
                     extras.putString("checkin", checkinTime);
                     extras.putString("checkout", CheckoutTime);
-                    extras.putString("points", String.valueOf(points));
-                    Log.d(TAG,"POINTS:"+points);
+                    extras.putString("points", String.valueOf(p5));
+                    Log.d(TAG,"POINTS:"+p5);
                     intent.putExtras(extras);
                     startActivity(intent);
                 }

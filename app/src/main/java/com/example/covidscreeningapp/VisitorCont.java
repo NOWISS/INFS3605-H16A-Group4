@@ -22,7 +22,7 @@ import com.google.firebase.storage.StorageReference;
 public class VisitorCont extends AppCompatActivity {
 
     private Button btn;
-    private int points=0;
+    private int p1,p2,p3,p4,p5;
     private TextView t5;
     private RadioGroup rg1, rg2, rg3, rg4,rg5;
     private String color;
@@ -62,37 +62,36 @@ public class VisitorCont extends AppCompatActivity {
         rg3 = findViewById(R.id.radioGroup3);
         rg4 = findViewById(R.id.radioGroup4);
         rg5 = findViewById(R.id.radioGroup5);
-
+        rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p1 = findRadioButton(checkedId);
+                Log.d(TAG, "onCheckedChanged: "+p1);
+            }});
+        rg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p2 = findRadioButton1(checkedId)+p1;
+                Log.d(TAG, "onCheckedChanged: "+p2);
+            }});
+        rg3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p3 = findRadioButton2(checkedId)+p2;
+                Log.d(TAG, "onCheckedChanged: "+p3);
+            }});
+        rg4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p4 = findRadioButton3(checkedId)+p3;
+                Log.d(TAG, "onCheckedChanged: "+p4);
+            }});
+        rg5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) { p5 = findRadioButton4(checkedId)+p4;
+                Log.d(TAG, "onCheckedChanged: "+p5);
+            }});
 
         btn = findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
-                rg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton1(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
-                rg3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton2(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
-                rg4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton3(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
-                rg5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) { points = findRadioButton4(checkedId)+points;
-                        Log.d(TAG, "onCheckedChanged: "+points);
-                    }});
 
                 int Id1 = rg1.getCheckedRadioButtonId();
                 int Id2 = rg2.getCheckedRadioButtonId();
@@ -103,9 +102,9 @@ public class VisitorCont extends AppCompatActivity {
                 if (Id1 == -1||Id2 == -1||Id3 == -1||Id4 == -1||Id5 == -1) {
                     t5.setText("Please answer all questions");
 
-                }else if(points==0){
+                }else if(p5==0){
                     color = Green;
-                }else if (points==2||points==1){
+                }else if (p5==2||p5==1){
                     color = Yellow;
                 }else{
                     color = Red;
@@ -125,7 +124,7 @@ public class VisitorCont extends AppCompatActivity {
                 extras.putString("checkin", checkinTime);
                 extras.putString("checkout", CheckoutTime);
                 extras.putString("color",color);
-                Log.d(TAG, "onClick: points"+points+color+des);
+                Log.d(TAG, "onClick: points"+p5+color+des);
                 intent.putExtras(extras);
                 startActivity(intent);
 
