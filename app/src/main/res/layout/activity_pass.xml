@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient3"
     tools:context=".Pass">
 
     <RelativeLayout
         android:id="@+id/relativeLayout3"
-        android:layout_width="411dp"
-        android:layout_height="103dp"
+        android:layout_width="409dp"
+        android:layout_height="65dp"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,42 +24,38 @@
 
         <TextView
             android:id="@+id/screening"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
-            android:text="Screening"
-            android:textSize="30dp"
+            android:textColor="#000000"
+            android:layout_width="186dp"
+            android:layout_height="41dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="95dp"
+            android:text="Screening Certificate"
+            android:textAlignment="center"
+            android:textSize="18dp"
             android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/screening"
-            android:layout_marginTop="38dp"
-            android:text="Certificate"
-            android:textSize="20sp" />
 
     </RelativeLayout>
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:layout_width="331dp"
+        android:layout_height="429dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="142dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
-        app:cardCornerRadius="20dp">
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView15"
@@ -70,17 +67,18 @@
                 android:hint="TextView"
                 android:textAlignment="center"
                 android:textSize="15dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.483"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.115" />
+                app:layout_constraintVertical_bias="0.114" />
 
             <TextView
                 android:id="@+id/textView29"
-                android:layout_width="220dp"
-                android:layout_height="wrap_content"
+                android:layout_width="258dp"
+                android:layout_height="96dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
                 android:gravity="center"
@@ -91,7 +89,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.223" />
+                app:layout_constraintVertical_bias="0.858" />
 
             <TextView
                 android:id="@+id/textView28"
@@ -102,20 +100,21 @@
                 android:gravity="center"
                 android:hint="TextView"
                 android:textAlignment="center"
-                android:textSize="15dp"
+                android:textSize="13dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.451"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.894" />
+                app:layout_constraintVertical_bias="0.218" />
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="152dp"
+                android:layout_width="160dp"
+                android:layout_height="138dp"
+                android:layout_marginTop="132dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
@@ -124,14 +123,15 @@
 
     <TextView
         android:id="@+id/textView30"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="278dp"
+        android:layout_height="45dp"
         android:layout_marginStart="176dp"
         android:layout_marginEnd="177dp"
         android:layout_marginBottom="70dp"
-        android:textSize="15dp"
+        android:text="Please take a screenshot of this page with your visible Screening Certificate. You'll be asked to present this certificate prior to entering. "
+        android:textAlignment="center"
+        android:textSize="12dp"
         android:textStyle="bold"
-        android:text="Please Take a Screenshot of this Screen and present it when entering"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
