@@ -52,20 +52,20 @@ public class Pass extends AppCompatActivity {
             tv.setText(FirstName+", "+LastName+" ");
             tv28.setText("You have been approved access to "+location);
             tv29.setText("Your colour code is "+color.toUpperCase()+", which allows you to enter all buildings at the " +
-                    "discretion of your organisation");
+                    "discretion of your organisation.");
             icon.setImageResource(R.drawable.green);
         }else if (color.equals("Yellow")){
             tv.setText(FirstName+", "+LastName+" ");
             tv28.setText("You have been approved access to "+location);
-            tv29.setText("Your colour code is "+color.toUpperCase()+", which allows you to enter all buildings at the " +
-                    "discretion of your organisation");
+            tv29.setText("Your colour code is "+color.toUpperCase()+", which allows you to enter selected buildings at the " +
+                    "discretion of your organisation. Please contact your organisation for COVID-19 rules and regulations.");
             icon.setImageResource(R.drawable.yellow);
 
         }else{
             tv.setText(FirstName+", "+LastName+" ");
             tv28.setText("Sorry, you have NOT been approved to enter " + location);
-            tv29.setText("Your screening pass is "+ color.toUpperCase() +", which means you are not alliowed to enter. \n" +
-                    "Please refer to NSW Health guidelines and recommendations");
+            tv29.setText("Your screening pass is "+ color.toUpperCase() +", which means you are not allowed to enter. \n" +
+                    "Please refer to NSW Health guidelines and recommendations for more information regarding COVID-19 regulations.");
             icon.setImageResource(R.drawable.red);
         }
     }
