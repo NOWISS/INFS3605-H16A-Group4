@@ -5,19 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailActivity_visitor"
+    android:background="@drawable/screen_shot_2022_04_18_at_1_51_25_am"
     android:padding="30dp">
-
-    <TextView
-        android:id="@+id/color2"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="108dp"
-        android:ems="10"
-        android:hint="Color"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lname1" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -39,21 +28,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Detail"
+            android:text="Visitor Detail"
             android:textSize="18sp"
+            android:textColor="#000000"
             android:textStyle="bold" />
 
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="348dp"
+        android:layout_height="341dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096"
+        app:srcCompat="@drawable/rect3" />
+
+    <TextView
+        android:id="@+id/color2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="108dp"
+        android:ems="10"
+        android:hint="Color"
+        android:inputType="number"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lname1" />
 
     <TextView
         android:id="@+id/fname1"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="96dp"
         android:ems="10"
         android:hint="Check-in Time"
         android:inputType="textPersonName"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,10 +79,12 @@
         android:id="@+id/lname1"
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Checkout Time"
         android:inputType="textPersonName"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fname1" />
@@ -73,10 +93,12 @@
         android:id="@+id/mb1"
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Number"
         android:inputType="number"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lname1" />
@@ -85,26 +107,29 @@
         android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="64dp"
         android:ems="10"
         android:hint="Location"
         android:inputType="number"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lname1" />
 
     <android.widget.Button
         android:id="@+id/btndelete"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="DELETE"
-        android:textColor="#EB2701"
+        android:layout_width="88dp"
+        android:layout_height="43dp"
+        android:text="Delete Entry"
+        android:textColor="#192573"
+        android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.839" />
+        app:layout_constraintVertical_bias="0.621" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

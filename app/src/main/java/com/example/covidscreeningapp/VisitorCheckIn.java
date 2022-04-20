@@ -98,7 +98,7 @@ public class VisitorCheckIn extends AppCompatActivity {
 
                 if (isEmpty(firstname)==true||isEmpty(lastname)==true||isEmpty(mobile)==true||des.equals(null)||checkin==null||checkout.equals(null)){
                     //Toast.makeText(EmployeeMain.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
-                    t5.setText("Please fill in all information");
+                    t5.setText("Please fill in all sections");
                 }else {
                     fn = firstname.getText().toString();
                     ln = lastname.getText().toString();

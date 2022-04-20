@@ -13,15 +13,15 @@
         <entry key="app/src/main/res/drawable/search.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/activity_consent_page.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_consent_popup.xml" value="0.24791666666666667" />
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.2355960837671708" />
-        <entry key="app/src/main/res/layout/activity_detail_visitor.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_detail_visitor.xml" value="0.75" />
         <entry key="app/src/main/res/layout/activity_employee_cont.xml" value="0.10436860416110773" />
         <entry key="app/src/main/res/layout/activity_employee_list_main.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_employee_login.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_employee_main.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_help_page.xml" value="0.5541666666666667" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1796875" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21429208568742814" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_organization_login.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_organization_main.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_pass.xml" value="0.6452240418616824" />

@@ -108,7 +108,7 @@ public class EmployeeMain extends AppCompatActivity {
 
                 if (isEmpty(firstname)==true||isEmpty(lastname)==true||isEmpty(mobile)==true||checkin==null||checkout.equals(null)){
                     //Toast.makeText(EmployeeMain.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
-                    t5.setText("Please fill in all information");
+                    t5.setText("Please fill in all sections");
                 }else {
 
 
