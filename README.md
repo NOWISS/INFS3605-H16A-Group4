@@ -12,4 +12,4 @@ Overview
 -------
 This app is a comprehensive screening app that allows employees and visitors to checkin / checkout with prefill information. Business users
 can view the checkin lists and use filtering functions to implement crowd control during recovery from Covid19 pandemic. This project is part of INFS3605 group project submission by
-H16A-Group 4, by using the Android platform.
+H16A-Group 4, by using the Android platform and Firebase database https://console.firebase.google.com/project/infs3605-covid-screening/database/infs3605-covid-screening-default-rtdb/data 
